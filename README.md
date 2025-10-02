@@ -1,7 +1,7 @@
 # Processor
 
 ## Overview
-This project implements a custom 32-bit CPU with a five-stage pipeline (Fetch, Decode, Execute, Memory, Writeback). The core supports bypassing, hazard detection, and exception handling so that the pipeline delivers correct results while keeping stalls to a minimum. The processor connects to instruction memory, data memory, and a register file wrapper, matching the interface defined for the course project.
+This project implements a custom 32-bit CPU in Verilog with a five-stage pipeline (Fetch, Decode, Execute, Memory, Writeback). The core supports bypassing, hazard detection, and exception handling so that the pipeline delivers correct results while keeping stalls to a minimum. The processor connects to instruction memory, data memory, and a register file wrapper, matching the interface defined for the course project.
 
 ## Instruction Set Architecture
 The custom ISA covers arithmetic, logic, memory access, and control flow instructions:
