@@ -1,0 +1,9 @@
+// Outputs high for one cycle when the input event signal is raised
+
+module pulse_generator(pulse, input_event, clock, reset);
+    input input_event, clock, reset;
+    output pulse;
+    wire q;
+    dffe_ref dff(.q(q), .d(input_event), .clk(clock), .en(1'b1), .clr(reset));
+    assign pulse = input_event && ~q;
+endmodule
