@@ -1,4 +1,4 @@
-// Outputs high for one cycle when the input event signal is raised
+// pulse_generator: Emits a one-cycle pulse when input_event rises. Inputs: input_event, clock, reset. Outputs: pulse.
 
 module pulse_generator(pulse, input_event, clock, reset);
     input input_event, clock, reset;

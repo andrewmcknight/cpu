@@ -1,3 +1,5 @@
+// adder_32: 32-bit carry-lookahead adder built from 8-bit blocks. Inputs: a, b, Cin. Outputs: s, overflow.
+
 module adder_32(s, overflow, a, b, Cin);
 
     input [31:0] a, b;

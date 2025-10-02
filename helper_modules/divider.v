@@ -1,3 +1,5 @@
+// divider: Iterative signed divider with restoring algorithm and status flags. Inputs: data_operandA, data_operandB, ctrl_MULT, ctrl_DIV, clock. Outputs: data_result, data_exception, data_resultRDY.
+
 module divider(
 	data_operandA, data_operandB, 
 	ctrl_MULT, ctrl_DIV, 

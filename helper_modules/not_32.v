@@ -1,3 +1,5 @@
+// not_32: Bitwise inversion for a 32-bit operand. Inputs: in. Outputs: out.
+
 module not_32(out, in);
 
     input [31:0] in;

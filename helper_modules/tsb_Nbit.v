@@ -1,3 +1,5 @@
+// tsb_Nbit: Parameterized tri-state buffer for N-bit buses. Inputs: in, oe. Outputs: out.
+
 module tsb_Nbit #(parameter N = 32) (out, in, oe);
 
     input oe;

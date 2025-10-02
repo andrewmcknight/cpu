@@ -1,3 +1,5 @@
+// mux_2to1_Nbit: Parameterized 2-to-1 multiplexer. Inputs: select, in0, in1. Outputs: out.
+
 module mux_2to1_Nbit #(parameter N = 32) (out, select, in0, in1);
 
     input select;

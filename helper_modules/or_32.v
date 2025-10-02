@@ -1,3 +1,5 @@
+// or_32: Bitwise OR of two 32-bit operands. Inputs: a, b. Outputs: out.
+
 module or_32(out, a, b);
 
     input [31:0] a, b;

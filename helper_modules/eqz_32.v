@@ -1,3 +1,5 @@
+// eqz_32: Zero detector implemented with a NOR tree. Inputs: in. Outputs: out.
+
 module eqz_32(out, in);
     input [31:0] in;
     output out;

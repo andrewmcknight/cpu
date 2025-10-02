@@ -1,3 +1,5 @@
+// and_32: Bitwise AND of two 32-bit operands. Inputs: a, b. Outputs: out.
+
 module and_32(out, a, b);
 
     input [31:0] a, b;

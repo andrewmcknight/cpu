@@ -1,3 +1,5 @@
+// adder_block: 8-bit carry-lookahead slice producing sum and carry signals. Inputs: a, b, Cin. Outputs: s, G, P, c7.
+
 module adder_block(s, G, P, c7, a, b, Cin);
 
     input Cin;

@@ -1,3 +1,5 @@
+// sra_32: Barrel shifter implementing arithmetic right shifts by variable amounts. Inputs: in, shift_amt. Outputs: out.
+
 module sra_32(out, in, shift_amt);
 
     input [31:0] in;

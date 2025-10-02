@@ -1,3 +1,5 @@
+// mux_8: Eight-input 32-bit multiplexer driven by a 3-bit select. Inputs: select, in0-in7. Outputs: out.
+
 module mux_8(out, select, in0, in1, in2, in3, in4, in5, in6, in7);
 
     input [2:0] select;

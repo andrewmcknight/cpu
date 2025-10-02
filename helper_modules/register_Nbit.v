@@ -1,3 +1,5 @@
+// register_Nbit: Parameterizable register array with enable and async clear. Inputs: dataIn, clk, en, clr. Outputs: dataOut.
+
 module register_Nbit #(parameter N = 32) (
     output [N-1:0] dataOut,
     input [N-1:0] dataIn,

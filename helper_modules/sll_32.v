@@ -1,3 +1,5 @@
+// sll_32: Barrel shifter implementing logical left shifts by variable amounts. Inputs: in, shift_amt. Outputs: out.
+
 module sll_32(out, in, shift_amt);
 
     input [31:0] in;

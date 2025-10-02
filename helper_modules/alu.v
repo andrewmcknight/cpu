@@ -1,3 +1,5 @@
+// alu: Executes arithmetic, logical, and shift ops plus comparison flags. Inputs: data_operandA, data_operandB, ctrl_ALUopcode, ctrl_shiftamt. Outputs: data_result, isNotEqual, isLessThan, overflow.
+
 module alu(data_operandA, data_operandB, ctrl_ALUopcode, ctrl_shiftamt, data_result, isNotEqual, isLessThan, overflow);
         
     input [31:0] data_operandA, data_operandB;

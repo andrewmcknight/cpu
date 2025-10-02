@@ -1,3 +1,5 @@
+// dffe_ref: Positive-edge D flip-flop with enable and async clear. Inputs: d, clk, en, clr. Outputs: q.
+
 module dffe_ref (q, d, clk, en, clr);
    
    //Inputs

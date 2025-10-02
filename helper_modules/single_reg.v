@@ -1,3 +1,5 @@
+// single_reg: 32-bit register constructed from bit-level dffe_ref cells. Inputs: dataIn, clk, en, clr. Outputs: dataOut.
+
 module single_reg (
     output [31:0] dataOut,
     input [31:0] dataIn,

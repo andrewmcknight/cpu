@@ -1,3 +1,5 @@
+// counter_32cycle: 5-bit synchronous counter advancing on enabled clocks. Inputs: clk, en, clr. Outputs: q.
+
 module counter_32cycle (
     output [4:0] q,
     input clk,

@@ -1,3 +1,5 @@
+// counter_16cycle: 4-bit synchronous counter advancing on enabled clocks. Inputs: clk, en, clr. Outputs: q.
+
 module counter_16cycle (
     output [3:0] q,
     input clk,

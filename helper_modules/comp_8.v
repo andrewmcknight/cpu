@@ -1,3 +1,5 @@
+// comp_8: Eight-bit comparator assembled from comp_2 stages. Inputs: EQ8, GT8, A, B. Outputs: EQ0, GT0.
+
 module comp_8(EQ8, GT8, A, B, EQ0, GT0);
 
     input EQ8, GT8;

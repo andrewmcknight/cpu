@@ -1,3 +1,5 @@
+// mux_2: 32-bit 2-to-1 multiplexer. Inputs: select, in0, in1. Outputs: out.
+
 module mux_2(out, select, in0, in1);
 
     input select;

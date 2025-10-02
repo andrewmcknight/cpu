@@ -1,3 +1,5 @@
+// mux_4: Four-input 32-bit multiplexer driven by a 2-bit select. Inputs: select, in0-in3. Outputs: out.
+
 module mux_4(out, select, in0, in1, in2, in3);
 
     input [1:0] select;

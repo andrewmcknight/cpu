@@ -1,3 +1,5 @@
+// regfile: 32x32 register file with dual read ports and single write port. Inputs: clock, ctrl_writeEnable, ctrl_reset, ctrl_writeReg, ctrl_readRegA, ctrl_readRegB, data_writeReg. Outputs: data_readRegA, data_readRegB.
+
 module regfile (
     input clock,
     input ctrl_writeEnable, ctrl_reset,

@@ -1,3 +1,5 @@
+// comp_2: Two-bit comparator stage cascading EQ/GT status. Inputs: EQ1, GT1, A, B. Outputs: EQ0, GT0.
+
 module comp_2(EQ1, GT1, A, B, EQ0, GT0);
     input EQ1, GT1;
     input [1:0] A, B;
