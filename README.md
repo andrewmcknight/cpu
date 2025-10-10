@@ -4,8 +4,6 @@ This project is a custom 32-bit CPU core built in structural Verilog from the gr
 
 The pipeline implements Fetch, Decode, Execute, Memory, and Writeback stages with bypassing, hazard detection, and exception handling. The processor connects to instruction memory, data memory, and a register file via an external wrapper.
 
-The processor and wrapper were uploaded to an FPGA and  
-
 ## Instruction Set Architecture
 The custom ISA covers arithmetic, logic, memory access, and control flow instructions:
 - `add $rd, $rs, $rt`
