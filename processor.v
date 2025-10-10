@@ -1,22 +1,3 @@
-/**
- * READ THIS DESCRIPTION!
- *
- * This is your processor module that will contain the bulk of your code submission. You are to implement
- * a 5-stage pipelined processor in this module, accounting for hazards and implementing bypasses as
- * necessary.
- *
- * Ultimately, your processor will be tested by a master skeleton, so the
- * testbench can see which controls signal you active when. Therefore, there needs to be a way to
- * "inject" imem, dmem, and regfile interfaces from some external controller module. The skeleton
- * file, Wrapper.v, acts as a small wrapper around your processor for this purpose. Refer to Wrapper.v
- * for more details.
- *
- * As a result, this module will NOT contain the RegFile nor the memory modules. Study the inputs 
- * very carefully - the RegFile-related I/Os are merely signals to be sent to the RegFile instantiated
- * in your Wrapper module. This is the same for your memory elements. 
- *
- *
- */
 module processor(
     // Control signals
     clock,                          // I: The master clock

@@ -1,26 +1,9 @@
 `timescale 1ns / 1ps
 /**
- * 
- * READ THIS DESCRIPTION:
  *
- * This is the Wrapper module that will serve as the header file combining your processor, 
- * RegFile and Memory elements together.
+ * This is the Wrapper module that combines the processor, RegFile and Memory elements together.
  *
- * This file will be used to generate the bitstream to upload to the FPGA.
- * We have provided a sibling file, Wrapper_tb.v so that you can test your processor's functionality.
- * 
- * We will be using our own separate Wrapper_tb.v to test your code. You are allowed to make changes to the Wrapper files 
- * for your own individual testing, but we expect your final processor.v and memory modules to work with the 
- * provided Wrapper interface.
- * 
- * Refer to Lab 5 documents for detailed instructions on how to interface 
- * with the memory elements. Each imem and dmem modules will take 12-bit 
- * addresses and will allow for storing of 32-bit values at each address. 
- * Each memory module should receive a single clock. At which edges, is 
- * purely a design choice (and thereby up to you). 
- * 
- * You must change line 36 to add the memory file of the test you created using the assembler
- * For example, you would add sample inside of the quotes on line 38 after assembling sample.s
+ * line 36 specifies the memory file for testing
  *
  **/
 
