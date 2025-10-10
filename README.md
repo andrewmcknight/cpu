@@ -1,11 +1,11 @@
 # Processor
-
 ## Overview
-This project implements a custom 32-bit CPU with a five-stage pipeline (Fetch, Decode, Execute, Memory, Writeback). The core supports bypassing, hazard detection, and exception handling so that the pipeline delivers correct results while keeping stalls to a minimum. The processor connects to instruction memory, data memory, and a register file wrapper, matching the interface defined for the course project.
+This project is a custom 32-bit CPU core built in structural Verilog from the ground up using fundamental logic gates. Every module in this processor (from muxes to multipliers and dividers) is constructed explicitly from AND, OR, NOT, XOR gates and their derivatives. Necessary exceptions were made for clock, D flip-flops, RAM, and ROM; they use behavioral Verilog (`reg` objects and `always` blocks) for latching.
+
+The pipeline implements Fetch, Decode, Execute, Memory, and Writeback stages with bypassing, hazard detection, and exception handling. The processor connects to instruction memory, data memory, and a register file via an external wrapper.
 
 ## Instruction Set Architecture
 The custom ISA covers arithmetic, logic, memory access, and control flow instructions:
-
 - `add $rd, $rs, $rt`
 - `addi $rd, $rs, N`
 - `sub $rd, $rs, $rt`
@@ -25,23 +25,33 @@ The custom ISA covers arithmetic, logic, memory access, and control flow instruc
 - `bex T`
 - `setx T`
 
-Arithmetic instructions include overflow detection that updates `rstatus` (register 30) when needed. The `setx` and `bex` instructions provide lightweight exception and system call semantics.
+Arithmetic instructions have exception detection, updating `rstatus` (register 30) when needed.
 
 ## Pipeline Organization
-- **Fetch:** Supplies sequential instruction words or redirect targets produced by branches and jumps.
-- **Decode:** Decodes opcodes, issues register reads, and prepares control signals for downstream stages.
-- **Execute:** Runs the ALU, evaluates branch conditions, and launches multi-cycle multiply/divide operations.
-- **Memory:** Performs data memory reads and writes, including forwarding of store data.
-- **Writeback:** Selects the final register destination data, honoring special cases for `setx` and exception codes.
+
+- **Fetch:** Supplies sequential instructions or redirect targets produced by branches and jumps
+- **Decode:** Decodes opcodes, reads registers, and prepares control signals for downstream stages
+- **Execute:** Runs the ALU, evaluates branch conditions, and initiates multi-cycle multiply/divide operations
+- **Memory:** Performs data memory reads and writes, including forwarding of store data through explicit multiplexer trees
+- **Writeback:** Selects and writes to the register file when appropriate
 
 ## Hazard Management
-- **Data hazards:** The Execute stage uses prioritized bypass paths from Execute, Memory, and Writeback results (including `rstatus`) so dependent instructions rarely stall.
-- **Load-use hazards:** A one-cycle stall is inserted when an instruction consumes the result of a preceding load before it reaches Writeback.
-- **Long-latency ops:** Multiply and divide instructions trigger a pulse generator that starts the respective unit and hold the pipeline until `data_resultRDY` asserts.
-- **Control hazards:** Taken branches and jumps flush Fetch/Decode to prevent incorrect instruction retirement.
 
-## Helper Modules
-Reusable datapath elements—ALU slices, shifters, multiplexers, registers, comparators, and tri-state buffers—live in `helper_modules/`. Each file now includes a short comment describing its role and I/O for quick reference while navigating the design.
+- **Data hazards:** The Execute stage uses prioritized bypass paths built from cascaded muxes, forwarding Execute, Memory, and Writeback results (including `rstatus`) to avoid stalls
+- **Load-use hazards:** A one-cycle stall is inserted when an instruction consumes a load result prematurely
+- **Long-latency operations:** Multiply and divide instructions trigger a pulse generator that starts the respective unit and holds the pipeline until `data_resultRDY` asserts
+- **Control hazards:** Taken branches and jumps flush Fetch/Decode through structural control paths to prevent incorrect instruction execution
 
-## Known Issues
-The current build passes the provided regression suite except for a remaining issue in the sort test, which appears to be branch-related.
+## Helper Modules:
+The `helper_modules/` directory contains fundamental structural components built from primitive logic gates:
+- **Adders**
+- **ALU**
+- **Mult/Div module** 
+- **Shifters**
+- **Counters**
+- **Multiplexers**
+- **Registers/register files** 
+- **Comparators**
+- **Tri-state buffers**
+- **Decoder/encoders**
+- and more...
